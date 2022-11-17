@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ririn/form.dart';
+import 'package:flutter_ririn/page/form.dart';
+import 'package:flutter_ririn/page/to_do_page.dart';
 
-import 'form.dart';
+import 'page/form.dart';
 
 void main() {
   runApp(const MyApp());
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
-  final String title = 'Flutter Demo Home Page';
+  final String title = 'Counter';
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
@@ -81,6 +82,16 @@ class _MyHomePageState extends State<MyHomePage> {
                 Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(builder: (context) => const MyFormPage()),
+                );
+              },
+            ),
+            ListTile(
+              title: const Text('To Do'),
+              onTap: () {
+                // Route menu ke halaman to do
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => const ToDoPage()),
                 );
               },
             ),
